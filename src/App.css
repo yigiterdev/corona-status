@@ -1,38 +1,32 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+body {
+  background-color: #000;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+}
+.app h1 {
+  font-weight: 700;
+  background-color: #f4f4f4;
+  color: #000;
   text-align: center;
+  padding: 7px;
+  border-radius: 15px;
+  margin: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.corona-card {
+  border: 2px solid #212629;
+  margin: 40px;
+  color: #fff;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.corona-card-header {
+  background-color: #fff;
+  color: #000;
+  border-radius: 7px;
+  font-weight: 700;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.today {
+  border: 2px solid #212629;
+  margin: 10px;
+  color: #fff;
 }
