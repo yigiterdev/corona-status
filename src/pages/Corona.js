@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import CoronaCard from "./components/CoronaCard";
-import { Consumer } from "./context";
+import CoronaCard from "../components/CoronaCard";
+import { Consumer } from "../context";
 import NumberFormat from "react-number-format";
 import Moment from "react-moment";
 

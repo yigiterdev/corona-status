@@ -1,5 +1,5 @@
 import "./App.css";
-import Corona from "./Corona";
+import Corona from "./pages/Corona";
 import { Provider } from "./context";
 
 function App() {
