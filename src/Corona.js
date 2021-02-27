@@ -23,10 +23,7 @@ class Corona extends Component {
                 <i className="fas fa-virus m-2"></i>
                 {heading}
               </h1>
-              <p className="text-muted p-4">
-                * Bu sayılar 11 Mart'dan itibaren toplanarak elde edilmiştir.
-                Günlük vaka sayıları değildir.
-              </p>
+
               <div className="text-center today">
                 <h3 className="corona-card-header">Bugün {day_counter}. Gün</h3>
                 <p>
