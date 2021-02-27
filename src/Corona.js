@@ -1,13 +1,22 @@
 import React, { Component } from "react";
 import CoronaCard from "./components/CoronaCard";
 import { Consumer } from "./context";
+import NumberFormat from "react-number-format";
+import Moment from "react-moment";
 
 class Corona extends Component {
   render() {
     return (
       <Consumer>
         {(value) => {
-          const { corona_list, heading, today, day_counter } = value;
+          const {
+            corona_list,
+            heading,
+            today,
+            day_counter,
+            daily_cases,
+          } = value;
+
           return (
             <div className="container">
               <h1 className="m-4">
@@ -21,26 +30,66 @@ class Corona extends Component {
               <div className="text-center today">
                 <h3 className="corona-card-header">Bugün {day_counter}. Gün</h3>
                 <p>
-                  <i className="fas fa-virus m-2"></i>Aktif Vaka: {today.Active}
+                  <i className="fas fa-calendar-day m-2"></i>Günlük Vaka:{" "}
+                  <NumberFormat
+                    value={daily_cases[daily_cases.length - 1]}
+                    displayType={"text"}
+                    thousandSeparator={true}
+                    renderText={(value) => (
+                      <React.Fragment>{value}</React.Fragment>
+                    )}
+                  />
+                </p>
+                <p>
+                  <i className="fas fa-virus m-2"></i>Aktif Vaka:{" "}
+                  <NumberFormat
+                    value={today.Active}
+                    displayType={"text"}
+                    thousandSeparator={true}
+                    renderText={(value) => (
+                      <React.Fragment>{value}</React.Fragment>
+                    )}
+                  />
                 </p>
                 <p>
                   <i className="fas fa-plus m-2"></i>Toplam Vaka:{" "}
-                  {today.Confirmed}
+                  <NumberFormat
+                    value={today.Confirmed}
+                    displayType={"text"}
+                    thousandSeparator={true}
+                    renderText={(value) => (
+                      <React.Fragment>{value}</React.Fragment>
+                    )}
+                  />
                 </p>
                 <p>
                   <i className="fas fa-first-aid m-2"></i>İyileşen Vaka:{" "}
-                  {today.Recovered}
+                  <NumberFormat
+                    value={today.Recovered}
+                    displayType={"text"}
+                    thousandSeparator={true}
+                    renderText={(value) => (
+                      <React.Fragment>{value}</React.Fragment>
+                    )}
+                  />
                 </p>
                 <p>
                   <i className="fas fa-heart-broken m-2"></i>Toplam Ölüm:{" "}
-                  {today.Deaths}
+                  <NumberFormat
+                    value={today.Deaths}
+                    displayType={"text"}
+                    thousandSeparator={true}
+                    renderText={(value) => (
+                      <React.Fragment>{value}</React.Fragment>
+                    )}
+                  />
                 </p>
                 <p>
                   <i className="fas fa-calendar-week m-2"></i>Tarih:{" "}
-                  {today.Date}
+                  <Moment format="DD/MM/YYYY">{today.Date}</Moment>
                 </p>
               </div>
-              <div className="row  d-flex justify-content-center align-items-center">
+              <div className="row d-flex justify-content-center align-items-center">
                 {corona_list.map((item, index) => {
                   return (
                     <CoronaCard
@@ -51,6 +100,7 @@ class Corona extends Component {
                       recovered={item.Recovered}
                       date={item.Date}
                       day={index}
+                      dailyCase={daily_cases[index]}
                     />
                   );
                 })}

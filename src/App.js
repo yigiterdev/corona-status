@@ -1,6 +1,7 @@
 import "./App.css";
 import Corona from "./Corona";
 import { Provider } from "./context";
+
 function App() {
   return (
     <Provider>
