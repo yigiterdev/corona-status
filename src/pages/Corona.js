@@ -9,21 +9,11 @@ class Corona extends Component {
     return (
       <Consumer>
         {(value) => {
-          const {
-            corona_list,
-            heading,
-            today,
-            day_counter,
-            daily_cases,
-          } = value;
-
+          const { corona_list, today, day_counter, daily_cases } = value;
+          const reverse_daily_cases = daily_cases.slice(0).reverse();
+          console.log(reverse_daily_cases);
           return (
             <div className="container">
-              <h1 className="m-4">
-                <i className="fas fa-virus m-2"></i>
-                {heading}
-              </h1>
-
               <div className="text-center today">
                 <h3 className="corona-card-header">Bugün {day_counter}. Gün</h3>
                 <p>
@@ -87,20 +77,23 @@ class Corona extends Component {
                 </p>
               </div>
               <div className="row d-flex justify-content-center align-items-center">
-                {corona_list.map((item, index) => {
-                  return (
-                    <CoronaCard
-                      key={index}
-                      active_case={item.Active}
-                      confirmed_case={item.Confirmed}
-                      deaths={item.Deaths}
-                      recovered={item.Recovered}
-                      date={item.Date}
-                      day={index}
-                      dailyCase={daily_cases[index]}
-                    />
-                  );
-                })}
+                {corona_list
+                  .slice(0)
+                  .reverse()
+                  .map((item, index) => {
+                    return (
+                      <CoronaCard
+                        key={index}
+                        active_case={item.Active}
+                        confirmed_case={item.Confirmed}
+                        deaths={item.Deaths}
+                        recovered={item.Recovered}
+                        date={item.Date}
+                        day={corona_list.length - index - 1}
+                        dailyCase={reverse_daily_cases[index]}
+                      />
+                    );
+                  })}
               </div>
             </div>
           );

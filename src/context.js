@@ -5,7 +5,6 @@ const Context = React.createContext();
 export class Provider extends Component {
   state = {
     corona_list: [],
-    heading: "11 Mart 2020'den itibaren Türkiye Covid-19 Vaka Listesi",
     today: [],
     day_counter: "",
     daily_cases: [],

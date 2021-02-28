@@ -9,10 +9,11 @@ You can look at live demo [here](https://coronastatusturkey.netlify.app/)
 ### Todo
 
 - [ ] Add other countries
-- [ ] Improve UI
 - [ ] Add pagination
+- [ ] Add charts
 
 ### Done ✓
 
 - [x] Add daily cases number
 - [x] Format numbers and date
+- [x] Improve UI
