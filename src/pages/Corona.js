@@ -11,7 +11,7 @@ class Corona extends Component {
         {(value) => {
           const { corona_list, today, day_counter, daily_cases } = value;
           const reverse_daily_cases = daily_cases.slice(0).reverse();
-          console.log(reverse_daily_cases);
+
           return (
             <div className="container">
               <div className="text-center today">
