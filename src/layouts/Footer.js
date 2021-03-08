@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="row d-flex justify-content-center align-items-center text-center">
-        <div className="col-md-6 my-2">
+        <div className="col-md-3 my-2">
           <p className="footer-text copyright mt-2">
             <strong>
               This App made with React 💛
@@ -14,8 +14,12 @@ const Footer = () => {
             </strong>
           </p>
         </div>
-
-        <div className="col-md-6 my-2">
+        <div className="col-md-3 my-2">
+          <a href="https://github.com/yigiterdev/corona-status">
+            <i className="fab fa-github mx-2"></i> Source Code
+          </a>
+        </div>
+        <div className="col-md-3 my-2">
           <a
             href="https://www.linkedin.com/in/yigiterbugra/"
             className="rounded-circle p-4 text-center"
