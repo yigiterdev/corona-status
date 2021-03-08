@@ -31,7 +31,6 @@ You can look at live demo [here](https://coronastatusturkey.netlify.app/)
 ## Todo
 
 - [ ] Add other countries
-- [ ] Add pagination
 - [ ] Add charts
 
 ## Done ✓
@@ -39,3 +38,4 @@ You can look at live demo [here](https://coronastatusturkey.netlify.app/)
 - [x] Add daily cases number
 - [x] Format numbers and date
 - [x] Improve UI
+- [x] Add pagination by [OmBayus](https://github.com/OmBayus)
