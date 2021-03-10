@@ -39,3 +39,4 @@ You can look at live demo [here](https://coronastatusturkey.netlify.app/)
 - [x] Format numbers and date
 - [x] Improve UI
 - [x] Add pagination by [OmBayus](https://github.com/OmBayus)
+- [x] Add vaccine numbers
