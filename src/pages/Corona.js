@@ -4,8 +4,8 @@ import { Consumer } from "../context";
 import NumberFormat from "react-number-format";
 import Moment from "react-moment";
 
-const Corona = ()=> {
-  const [count,setCount] = useState(6)
+const Corona = () => {
+  const [count, setCount] = useState(6);
   return (
     <Consumer>
       {(value) => {
@@ -14,6 +14,13 @@ const Corona = ()=> {
 
         return (
           <div className="container">
+            <p className="text-muted text-center px-5">
+              * Veriler{" "}
+              <a href="https://covid19api.com/" target="_blank">
+                Covid19 API
+              </a>{" "}
+              tarafından sağlanmaktadır.
+            </p>
             <div className="text-center today">
               <h3 className="corona-card-header">Bugün {day_counter}. Gün</h3>
               <p>
@@ -82,24 +89,31 @@ const Corona = ()=> {
                 .reverse()
                 .map((item, index) => {
                   return (
-                    (index < count && <CoronaCard
-                      key={index}
-                      active_case={item.Active}
-                      confirmed_case={item.Confirmed}
-                      deaths={item.Deaths}
-                      recovered={item.Recovered}
-                      date={item.Date}
-                      day={corona_list.length - index - 1}
-                      dailyCase={reverse_daily_cases[index]}
-                    />)
+                    index < count && (
+                      <CoronaCard
+                        key={index}
+                        active_case={item.Active}
+                        confirmed_case={item.Confirmed}
+                        deaths={item.Deaths}
+                        recovered={item.Recovered}
+                        date={item.Date}
+                        day={corona_list.length - index - 1}
+                        dailyCase={reverse_daily_cases[index]}
+                      />
+                    )
                   );
                 })}
             </div>
-            {count < corona_list.length && <div class="arrow" onClick={()=>setCount(prevValue=>prevValue+10)}></div>}
+            {count < corona_list.length && (
+              <div
+                className="arrow"
+                onClick={() => setCount((prevValue) => prevValue + 10)}
+              ></div>
+            )}
           </div>
         );
       }}
     </Consumer>
   );
-}
+};
 export default Corona;

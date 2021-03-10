@@ -1,13 +1,15 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <nav className="navbar navbar-light mb-5">
-      <h1 className="mr-auto p-4">Corona Status | Turkey</h1>
+      <Link to="/" style={{ textDecoration: "none" }}>
+        <h1 className="mr-auto p-4">Corona Status | Turkey</h1>
+      </Link>
       <div className="text-center ml-auto navbar-button">
-        <a href="https://covid19asi.saglik.gov.tr/" className="btn btn-dark">
+        <Link to="/vaccine" className="btn btn-dark">
           Türkiye Aşı Miktarı
-        </a>
+        </Link>
       </div>
     </nav>
   );

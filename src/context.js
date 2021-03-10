@@ -9,8 +9,14 @@ export class Provider extends Component {
     day_counter: "",
     daily_cases: [],
     total_cases: "",
+    vacine_list: [],
+    vacine_day: [],
   };
   componentDidMount() {
+    this.getCases();
+    this.getVaccines();
+  }
+  getCases() {
     const dailyCases = [];
     axios
       .get("https://api.covid19api.com/total/dayone/country/turkey")
@@ -29,6 +35,18 @@ export class Provider extends Component {
         });
       })
       .catch((err) => console.log(err));
+  }
+  getVaccines() {
+    axios
+      .get(
+        "https://disease.sh/v3/covid-19/vaccine/coverage/countries/turkey?lastdays=10"
+      )
+      .then((res) => {
+        this.setState({
+          vacine_list: Object.values(res.data.timeline),
+          vacine_day: Object.keys(res.data.timeline),
+        });
+      });
   }
 
   render() {
