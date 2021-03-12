@@ -31,7 +31,9 @@ You can look at live demo [here](https://coronastatusturkey.netlify.app/)
 ## Todo
 
 - [ ] Add other countries
-- [ ] Add charts
+- [ ] Add charts for vaccine
+- [ ] Improve chart style
+- [ ] Improve loading page (Can be animated)
 
 ## Done ✓
 
@@ -40,3 +42,6 @@ You can look at live demo [here](https://coronastatusturkey.netlify.app/)
 - [x] Improve UI
 - [x] Add pagination by [OmBayus](https://github.com/OmBayus)
 - [x] Add vaccine numbers
+- [x] Add charts
+- [x] Improved api requests
+- [x] Add basic loading page for preventing errors

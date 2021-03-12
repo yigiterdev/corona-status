@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import CoronaCard from "../components/CoronaCard";
+import CoronaChart from "../components/CoronaChart";
 import { Consumer } from "../context";
 import NumberFormat from "react-number-format";
 import Moment from "react-moment";
@@ -10,7 +11,10 @@ const Corona = () => {
     <Consumer>
       {(value) => {
         const { corona_list, today, day_counter, daily_cases } = value;
+		const reverse_corona_list = corona_list.slice(0).reverse();
         const reverse_daily_cases = daily_cases.slice(0).reverse();
+		var reverse_deaths = [];
+		reverse_corona_list.every((item, index) => reverse_deaths[index] = item.Deaths);
 
         return (
           <div className="container">
@@ -21,6 +25,14 @@ const Corona = () => {
               </a>{" "}
               tarafından sağlanmaktadır.
             </p>
+			      <div className="text-center today">
+				      <CoronaChart
+				        list={reverse_corona_list}
+				        daily_cases={reverse_daily_cases}
+				        deaths={reverse_deaths}
+				      />
+			      </div>
+			
             <div className="text-center today">
               <h3 className="corona-card-header">Bugün {day_counter}. Gün</h3>
               <p>
