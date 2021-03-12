@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-
+import Spinner from "./components/Spinner";
 const Context = React.createContext();
 export class Provider extends Component {
   state = {
@@ -56,7 +56,7 @@ export class Provider extends Component {
     const { isLoading } = this.state;
     //TODO: In future this can be replaced with dynamic loading page.
     if (isLoading) {
-      return <div className="App">Yükleniyor...</div>;
+      return <Spinner />;
     }
     return (
       <Context.Provider value={this.state}>
