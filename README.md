@@ -37,11 +37,13 @@ You can look at live demo [here](https://coronastatusturkey.netlify.app/)
 
 ## Done ✓
 
-- [x] Add daily cases number
-- [x] Format numbers and date
-- [x] Improve UI
+- [x] Add daily cases number by [yigiterdev](https://github.com/yigiterdev)
+- [x] Format numbers and date by [yigiterdev](https://github.com/yigiterdev)
+- [x] Improve UI by [yigiterdev](https://github.com/yigiterdev)
 - [x] Add pagination by [OmBayus](https://github.com/OmBayus)
-- [x] Add vaccine numbers
+- [x] Add vaccine numbers by [yigiterdev](https://github.com/yigiterdev)
 - [x] Add charts by [SinecKers](https://github.com/sineckers)
 - [x] Improved api requests by [SinecKers](https://github.com/sineckers)
 - [x] Add basic loading page for preventing errors by [SinecKers](https://github.com/sineckers)
+- [x] Add basic spinner for loading page by [yigiterdev](https://github.com/yigiterdev)
+- [x] Improve loading page by [yigiterdev](https://github.com/yigiterdev)
