@@ -4,6 +4,7 @@ import axios from "axios";
 const Context = React.createContext();
 export class Provider extends Component {
   state = {
+	isLoading: true,
     corona_list: [],
     today: [],
     day_counter: "",
@@ -12,13 +13,9 @@ export class Provider extends Component {
     vacine_list: [],
     vacine_day: [],
   };
-  componentDidMount() {
-    this.getCases();
-    this.getVaccines();
-  }
-  getCases() {
+  async getCases() {
     const dailyCases = [];
-    axios
+    await axios
       .get("https://api.covid19api.com/total/dayone/country/turkey")
       .then((res) => {
         this.setState({
@@ -33,11 +30,12 @@ export class Provider extends Component {
         this.setState({
           daily_cases: dailyCases,
         });
+		this.setState({ isLoading: false });
       })
       .catch((err) => console.log(err));
   }
-  getVaccines() {
-    axios
+  async getVaccines() {
+    await axios
       .get(
         "https://disease.sh/v3/covid-19/vaccine/coverage/countries/turkey?lastdays=10"
       )
@@ -48,8 +46,18 @@ export class Provider extends Component {
         });
       });
   }
+  
+  componentDidMount() {
+    this.getCases();
+    this.getVaccines();
+  }
 
   render() {
+	const { isLoading } = this.state;
+	//TODO: In future this can be replaced with dynamic loading page.
+	if (isLoading) {
+      return <div className="App">Yükleniyor...</div>;
+    }
     return (
       <Context.Provider value={this.state}>
         {this.props.children}
