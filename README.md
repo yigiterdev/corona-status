@@ -42,6 +42,6 @@ You can look at live demo [here](https://coronastatusturkey.netlify.app/)
 - [x] Improve UI
 - [x] Add pagination by [OmBayus](https://github.com/OmBayus)
 - [x] Add vaccine numbers
-- [x] Add charts
-- [x] Improved api requests
-- [x] Add basic loading page for preventing errors
+- [x] Add charts by [SinecKers](https://github.com/sineckers)
+- [x] Improved api requests by [SinecKers](https://github.com/sineckers)
+- [x] Add basic loading page for preventing errors by [SinecKers](https://github.com/sineckers)
