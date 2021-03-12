@@ -25,13 +25,13 @@ const Corona = () => {
               </a>{" "}
               tarafından sağlanmaktadır.
             </p>
-			<div className="text-center today">
-				<CoronaChart
-				  list={reverse_corona_list}
-				  daily_cases={reverse_daily_cases}
-				  deaths={reverse_deaths}
-				/>
-			</div>
+			      <div className="text-center today">
+				      <CoronaChart
+				        list={reverse_corona_list}
+				        daily_cases={reverse_daily_cases}
+				        deaths={reverse_deaths}
+				      />
+			      </div>
 			
             <div className="text-center today">
               <h3 className="corona-card-header">Bugün {day_counter}. Gün</h3>

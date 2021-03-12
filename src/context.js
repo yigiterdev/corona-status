@@ -4,7 +4,7 @@ import axios from "axios";
 const Context = React.createContext();
 export class Provider extends Component {
   state = {
-	isLoading: true,
+    isLoading: true,
     corona_list: [],
     today: [],
     day_counter: "",
@@ -30,7 +30,7 @@ export class Provider extends Component {
         this.setState({
           daily_cases: dailyCases,
         });
-		this.setState({ isLoading: false });
+        this.setState({ isLoading: false });
       })
       .catch((err) => console.log(err));
   }
@@ -46,16 +46,16 @@ export class Provider extends Component {
         });
       });
   }
-  
+
   componentDidMount() {
     this.getCases();
     this.getVaccines();
   }
 
   render() {
-	const { isLoading } = this.state;
-	//TODO: In future this can be replaced with dynamic loading page.
-	if (isLoading) {
+    const { isLoading } = this.state;
+    //TODO: In future this can be replaced with dynamic loading page.
+    if (isLoading) {
       return <div className="App">Yükleniyor...</div>;
     }
     return (
