@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import CoronaCard from "../components/CoronaCard";
-import CoronaChart from "../components/CoronaChart";
-import { Consumer } from "../context";
-import NumberFormat from "react-number-format";
-import Moment from "react-moment";
+import React, { useState } from 'react';
+import CoronaCard from '../components/CoronaCard';
+import CoronaChart from '../components/CoronaChart';
+import { Consumer } from '../context';
+import NumberFormat from 'react-number-format';
+import Moment from 'react-moment';
 
 const Corona = () => {
   const [count, setCount] = useState(6);
@@ -11,35 +11,40 @@ const Corona = () => {
     <Consumer>
       {(value) => {
         const { corona_list, today, day_counter, daily_cases } = value;
-		const reverse_corona_list = corona_list.slice(0).reverse();
+        const reverse_corona_list = corona_list.slice(0).reverse();
         const reverse_daily_cases = daily_cases.slice(0).reverse();
-		var reverse_deaths = [];
-		reverse_corona_list.every((item, index) => reverse_deaths[index] = item.Deaths);
+        var reverse_deaths = [];
+        reverse_corona_list.every(
+          (item, index) => (reverse_deaths[index] = item.Deaths)
+        );
 
         return (
           <div className="container">
             <p className="text-muted text-center px-5">
-              * Veriler{" "}
-              <a href="https://covid19api.com/" target="_blank">
+              * Veriler{' '}
+              <a
+                href="https://covid19api.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Covid19 API
-              </a>{" "}
+              </a>{' '}
               tarafından sağlanmaktadır.
             </p>
-			      <div className="text-center today">
-				      <CoronaChart
-				        list={reverse_corona_list}
-				        daily_cases={reverse_daily_cases}
-				        deaths={reverse_deaths}
-				      />
-			      </div>
-			
+            <div className="text-center today">
+              <CoronaChart
+                list={reverse_corona_list}
+                daily_cases={reverse_daily_cases}
+                deaths={reverse_deaths}
+              />
+            </div>
             <div className="text-center today">
               <h3 className="corona-card-header">Bugün {day_counter}. Gün</h3>
               <p>
-                <i className="fas fa-calendar-day m-2"></i>Günlük Vaka:{" "}
+                <i className="fas fa-calendar-day m-2"></i>Günlük Vaka:{' '}
                 <NumberFormat
                   value={daily_cases[daily_cases.length - 1]}
-                  displayType={"text"}
+                  displayType={'text'}
                   thousandSeparator={true}
                   renderText={(value) => (
                     <React.Fragment>{value}</React.Fragment>
@@ -47,10 +52,10 @@ const Corona = () => {
                 />
               </p>
               <p>
-                <i className="fas fa-virus m-2"></i>Aktif Vaka:{" "}
+                <i className="fas fa-virus m-2"></i>Aktif Vaka:{' '}
                 <NumberFormat
                   value={today.Active}
-                  displayType={"text"}
+                  displayType={'text'}
                   thousandSeparator={true}
                   renderText={(value) => (
                     <React.Fragment>{value}</React.Fragment>
@@ -58,10 +63,10 @@ const Corona = () => {
                 />
               </p>
               <p>
-                <i className="fas fa-plus m-2"></i>Toplam Vaka:{" "}
+                <i className="fas fa-plus m-2"></i>Toplam Vaka:{' '}
                 <NumberFormat
                   value={today.Confirmed}
-                  displayType={"text"}
+                  displayType={'text'}
                   thousandSeparator={true}
                   renderText={(value) => (
                     <React.Fragment>{value}</React.Fragment>
@@ -69,10 +74,10 @@ const Corona = () => {
                 />
               </p>
               <p>
-                <i className="fas fa-first-aid m-2"></i>İyileşen Vaka:{" "}
+                <i className="fas fa-first-aid m-2"></i>İyileşen Vaka:{' '}
                 <NumberFormat
                   value={today.Recovered}
-                  displayType={"text"}
+                  displayType={'text'}
                   thousandSeparator={true}
                   renderText={(value) => (
                     <React.Fragment>{value}</React.Fragment>
@@ -80,10 +85,10 @@ const Corona = () => {
                 />
               </p>
               <p>
-                <i className="fas fa-heart-broken m-2"></i>Toplam Ölüm:{" "}
+                <i className="fas fa-heart-broken m-2"></i>Toplam Ölüm:{' '}
                 <NumberFormat
                   value={today.Deaths}
-                  displayType={"text"}
+                  displayType={'text'}
                   thousandSeparator={true}
                   renderText={(value) => (
                     <React.Fragment>{value}</React.Fragment>
@@ -91,7 +96,7 @@ const Corona = () => {
                 />
               </p>
               <p>
-                <i className="fas fa-calendar-week m-2"></i>Tarih:{" "}
+                <i className="fas fa-calendar-week m-2"></i>Tarih:{' '}
                 <Moment format="DD/MM/YYYY">{today.Date}</Moment>
               </p>
             </div>

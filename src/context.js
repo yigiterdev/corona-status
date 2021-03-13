@@ -1,22 +1,22 @@
-import React, { Component } from "react";
-import axios from "axios";
-import Spinner from "./components/Spinner";
+import React, { Component } from 'react';
+import axios from 'axios';
+import { Spinner } from './components/Spinner';
 const Context = React.createContext();
 export class Provider extends Component {
   state = {
     isLoading: true,
     corona_list: [],
     today: [],
-    day_counter: "",
+    day_counter: '',
     daily_cases: [],
-    total_cases: "",
+    total_cases: '',
     vacine_list: [],
     vacine_day: [],
   };
   async getCases() {
     const dailyCases = [];
     await axios
-      .get("https://api.covid19api.com/total/dayone/country/turkey")
+      .get('https://api.covid19api.com/total/dayone/country/turkey')
       .then((res) => {
         this.setState({
           corona_list: res.data,
@@ -37,7 +37,7 @@ export class Provider extends Component {
   async getVaccines() {
     await axios
       .get(
-        "https://disease.sh/v3/covid-19/vaccine/coverage/countries/turkey?lastdays=10"
+        'https://disease.sh/v3/covid-19/vaccine/coverage/countries/turkey?lastdays=10'
       )
       .then((res) => {
         this.setState({
