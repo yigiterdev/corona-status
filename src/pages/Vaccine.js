@@ -1,7 +1,7 @@
-import React from "react";
-import { Consumer } from "../context";
-import NumberFormat from "react-number-format";
-import Moment from "react-moment";
+import React from 'react';
+import { Consumer } from '../context';
+import NumberFormat from 'react-number-format';
+import Moment from 'react-moment';
 const Vaccine = () => {
   return (
     <Consumer>
@@ -14,10 +14,10 @@ const Vaccine = () => {
               Son 10 günde ulaşılan aşı miktarı
             </h1>
             <p className="text-muted text-center px-5">
-              * Veriler{" "}
-              <a href="https://disease.sh/" target="_blank">
+              * Veriler{' '}
+              <a href="https://disease.sh/" target="_blank" rel="noreferrer">
                 disease.sh
-              </a>{" "}
+              </a>{' '}
               tarafından sağlanmaktadır. Toplam uygulanan 1.doz ve 2.doz
               miktarları verilmiştir. Aşı uygulanan kişi sayısı değildir.
             </p>
@@ -41,7 +41,7 @@ const Vaccine = () => {
                         <strong>Ulaşılan Aşı Miktarı: </strong>
                         <NumberFormat
                           value={item}
-                          displayType={"text"}
+                          displayType={'text'}
                           thousandSeparator={true}
                           renderText={(value) => (
                             <React.Fragment>{value}</React.Fragment>
