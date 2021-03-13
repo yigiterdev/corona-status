@@ -115,7 +115,7 @@ const Corona = () => {
                         recovered={item.Recovered}
                         date={item.Date}
                         day={list.length - index - 1}
-                        dailyCase={reverse_daily_cases[index]}
+                        dailyCase={reverse_daily_cases[index + 1]}
                       />
                     )
                   );
