@@ -48,3 +48,4 @@ for building the project into static, deployable files.
 - [x] Add basic loading page for preventing errors by [SinecKers](https://github.com/sineckers)
 - [x] Add basic spinner for loading page by [yigiterdev](https://github.com/yigiterdev)
 - [x] Improve loading page by [yigiterdev](https://github.com/yigiterdev)
+- [x] Remove duplicate card by [duzgundev](https://github.com/duzgundev)
