@@ -102,9 +102,9 @@ const Corona = () => {
             </div>
             <div className="row d-flex justify-content-center align-items-center">
               {corona_list
-                .slice(0)
+                .slice(0, -1)
                 .reverse()
-                .map((item, index) => {
+                .map((item, index, list) => {
                   return (
                     index < count && (
                       <CoronaCard
@@ -114,7 +114,7 @@ const Corona = () => {
                         deaths={item.Deaths}
                         recovered={item.Recovered}
                         date={item.Date}
-                        day={corona_list.length - index - 1}
+                        day={list.length - index - 1}
                         dailyCase={reverse_daily_cases[index]}
                       />
                     )
