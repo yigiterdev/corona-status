@@ -31,7 +31,6 @@ for building the project into static, deployable files.
 
 ## Todo
 
-- [ ] Add other countries
 - [ ] Add charts for vaccine
 - [ ] Improve chart style
 - [ ] Improve loading page (Can be animated)
