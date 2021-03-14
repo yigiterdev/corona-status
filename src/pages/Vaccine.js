@@ -6,7 +6,7 @@ const Vaccine = () => {
   return (
     <Consumer>
       {(value) => {
-        const { vacine_list, vacine_day } = value;
+        const { vacine_list, vacine_day,country } = value;
         const reverse_vaccine = vacine_day.slice(0).reverse();
         return (
           <div className="container">
@@ -29,7 +29,7 @@ const Vaccine = () => {
                   return (
                     <div key={index} className="today text-center col-md-5">
                       <strong>Ülke: </strong>
-                      Türkiye 🇹🇷
+                      {country}
                       <br />
                       <i className="fas fa-calendar-day m-2"></i>
                       <strong>Tarih: </strong>
