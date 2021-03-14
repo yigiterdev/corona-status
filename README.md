@@ -1,6 +1,6 @@
 # Corona Status | World
 
-This application shows since March 11 within all around the world coronavirus number of cases, the number of recovered, the number of deaths. I used react and [Covid-19 API](https://documenter.getpostman.com/view/10808728/SzS8rjbc#71b460b6-a97e-4991-b190-2b0a0523e0) while making this app.
+This application shows since March 11 within all around the world coronavirus number of cases, the number of recovered, the number of deaths. We used React,Bootstrap and [Covid-19 API](https://documenter.getpostman.com/view/10808728/SzS8rjbc#71b460b6-a97e-4991-b190-2b0a0523e0) while making this app.
 
 ## Development & Deploying Guide
 
