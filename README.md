@@ -26,7 +26,7 @@ for building the project into static, deployable files.
 
 ## Live
 
-- You can look at live demo [here](https://coronastatusturkey.netlify.app/)
+- You can look at live demo [here](https://coronastatusworld.netlify.app//)
 - You can look at this project from [opensource.place](https://opensource.place/project/yigiterdev/corona-status)
 
 ## Todo
