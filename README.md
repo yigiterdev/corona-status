@@ -49,3 +49,4 @@ for building the project into static, deployable files.
 - [x] Add basic spinner for loading page by [yigiterdev](https://github.com/yigiterdev)
 - [x] Improve loading page by [yigiterdev](https://github.com/yigiterdev)
 - [x] Remove duplicate card by [duzgundev](https://github.com/duzgundev)
+- [x] Add other countries and redirects by [OmBayus](https://github.com/OmBayus)
