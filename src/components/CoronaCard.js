@@ -10,6 +10,7 @@ const CoronaCard = ({
   day,
   today,
   dailyCase,
+  recovered_cases,
 }) => {
   return (
     <div className="col-md-5 corona-card text-center">
@@ -18,6 +19,15 @@ const CoronaCard = ({
         <i className="fas fa-calendar-day m-2"></i>Günlük Vaka:{' '}
         <NumberFormat
           value={dailyCase}
+          displayType={'text'}
+          thousandSeparator={true}
+          renderText={(value) => <React.Fragment>{value}</React.Fragment>}
+        />
+      </p>
+      <p>
+        <i className="fas fa-user-md m-2"></i>Günlük İyileşen Vaka:{' '}
+        <NumberFormat
+          value={recovered_cases}
           displayType={'text'}
           thousandSeparator={true}
           renderText={(value) => <React.Fragment>{value}</React.Fragment>}

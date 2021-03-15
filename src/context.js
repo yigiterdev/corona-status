@@ -12,23 +12,19 @@ export class Provider extends Component {
     total_cases: '',
     vacine_list: [],
     vacine_day: [],
-    daily_recovered_cases: []
+    daily_recovered_cases: [],
   };
+
   async getCases() {
     const dailyCases = [];
     const dailyrecovered = [];
-    countries:[],
-    country:"Turkey"
-  };
-  async getCases() {
-    const dailyCases = [];
-    let temp = await localStorage.getItem("Country")
-    var country = "Turkey"
-    if(temp){
-      country = temp
+    let temp = await localStorage.getItem('Country');
+    var country = 'Turkey';
+    if (temp) {
+      country = temp;
       this.setState({
-        country:String(temp)
-      })
+        country: String(temp),
+      });
     }
     await axios
       .get(`https://api.covid19api.com/total/dayone/country/${country}`)
@@ -42,25 +38,26 @@ export class Provider extends Component {
         dailyCases.push(res.data[0].Confirmed);
         for (let i = 1; i < res.data.length; i++) {
           dailyCases.push(res.data[i].Confirmed - res.data[i - 1].Confirmed);
-          dailyrecovered.push(res.data[i].Recovered - res.data[i - 1].Recovered);
+          dailyrecovered.push(
+            res.data[i].Recovered - res.data[i - 1].Recovered
+          );
         }
         this.setState({
           daily_cases: dailyCases,
-          daily_recovered_cases : dailyrecovered,
-          isLoading: false
+          daily_recovered_cases: dailyrecovered,
+          isLoading: false,
         });
       })
       .catch((err) => console.log(err));
   }
   async getVaccines() {
-
-    let temp = await localStorage.getItem("Country")
-    var country = "turkey"
-    if(temp){
-      country = temp
+    let temp = await localStorage.getItem('Country');
+    var country = 'turkey';
+    if (temp) {
+      country = temp;
       this.setState({
-        country:String(temp)
-      })
+        country: String(temp),
+      });
     }
 
     await axios
@@ -75,22 +72,18 @@ export class Provider extends Component {
       });
   }
 
-  async getCountries(){
-    await axios
-      .get(
-        `https://api.covid19api.com/countries`
-      )
-      .then((res) => {
-        this.setState({
-          countries: res.data
-        });
+  async getCountries() {
+    await axios.get(`https://api.covid19api.com/countries`).then((res) => {
+      this.setState({
+        countries: res.data,
       });
+    });
   }
 
   componentDidMount() {
     this.getCases();
     this.getVaccines();
-    this.getCountries()
+    this.getCountries();
   }
 
   render() {

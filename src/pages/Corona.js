@@ -10,15 +10,23 @@ const Corona = () => {
   return (
     <Consumer>
       {(value) => {
-        const { corona_list, today, day_counter, daily_cases, daily_recovered_cases } = value;
+        const {
+          corona_list,
+          today,
+          day_counter,
+          daily_cases,
+          daily_recovered_cases,
+        } = value;
         const reverse_corona_list = corona_list.slice(0).reverse();
         const reverse_daily_cases = daily_cases.slice(0).reverse();
-        const reverse_recovered_cases = daily_recovered_cases.slice(0).reverse();
+        const reverse_recovered_cases = daily_recovered_cases
+          .slice(0)
+          .reverse();
         var reverse_deaths = [];
         reverse_corona_list.every(
           (item, index) => (reverse_deaths[index] = item.Deaths)
         );
-        console.log(daily_recovered_cases);
+
         return (
           <div className="container">
             <p className="text-muted text-center px-5">
@@ -46,6 +54,17 @@ const Corona = () => {
                 <i className="fas fa-calendar-day m-2"></i>Günlük Vaka:{' '}
                 <NumberFormat
                   value={daily_cases[daily_cases.length - 1]}
+                  displayType={'text'}
+                  thousandSeparator={true}
+                  renderText={(value) => (
+                    <React.Fragment>{value}</React.Fragment>
+                  )}
+                />
+              </p>
+              <p>
+                <i className="fas fa-user-md m-2"></i>Günlük İyileşen Vaka:{' '}
+                <NumberFormat
+                  value={daily_recovered_cases[daily_cases.length - 1]}
                   displayType={'text'}
                   thousandSeparator={true}
                   renderText={(value) => (
@@ -118,6 +137,7 @@ const Corona = () => {
                         date={item.Date}
                         day={list.length - index - 1}
                         dailyCase={reverse_daily_cases[index + 1]}
+                        recovered_cases={reverse_recovered_cases[index + 1]}
                       />
                     )
                   );

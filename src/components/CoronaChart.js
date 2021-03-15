@@ -18,7 +18,7 @@ const CoronaChart = ({ list, daily_cases, deaths, recovered_cases }) => {
     data: [
       {
         type: 'spline',
-        name: 'Recovered',
+        name: 'Günlük İyileşen',
         showInLegend: true,
         dataPoints: [
           { y: daily_cases[10], label: Moment(list[10].Date).format('DD MMM') },
@@ -40,17 +40,50 @@ const CoronaChart = ({ list, daily_cases, deaths, recovered_cases }) => {
         name: 'Günlük Vaka',
         showInLegend: true,
         dataPoints: [
-          { y: recovered_cases[10], label: Moment(list[10].Date).format('DD MMM') },
-          { y: recovered_cases[9], label: Moment(list[9].Date).format('DD MMM') },
-          { y: recovered_cases[8], label: Moment(list[8].Date).format('DD MMM') },
-          { y: recovered_cases[7], label: Moment(list[7].Date).format('DD MMM') },
-          { y: recovered_cases[6], label: Moment(list[6].Date).format('DD MMM') },
-          { y: recovered_cases[5], label: Moment(list[5].Date).format('DD MMM') },
-          { y: recovered_cases[4], label: Moment(list[4].Date).format('DD MMM') },
-          { y: recovered_cases[3], label: Moment(list[3].Date).format('DD MMM') },
-          { y: recovered_cases[2], label: Moment(list[2].Date).format('DD MMM') },
-          { y: recovered_cases[1], label: Moment(list[1].Date).format('DD MMM') },
-          { y: recovered_cases[0], label: Moment(list[0].Date).format('DD MMM') },
+          {
+            y: recovered_cases[10],
+            label: Moment(list[10].Date).format('DD MMM'),
+          },
+          {
+            y: recovered_cases[9],
+            label: Moment(list[9].Date).format('DD MMM'),
+          },
+          {
+            y: recovered_cases[8],
+            label: Moment(list[8].Date).format('DD MMM'),
+          },
+          {
+            y: recovered_cases[7],
+            label: Moment(list[7].Date).format('DD MMM'),
+          },
+          {
+            y: recovered_cases[6],
+            label: Moment(list[6].Date).format('DD MMM'),
+          },
+          {
+            y: recovered_cases[5],
+            label: Moment(list[5].Date).format('DD MMM'),
+          },
+          {
+            y: recovered_cases[4],
+            label: Moment(list[4].Date).format('DD MMM'),
+          },
+          {
+            y: recovered_cases[3],
+            label: Moment(list[3].Date).format('DD MMM'),
+          },
+          {
+            y: recovered_cases[2],
+            label: Moment(list[2].Date).format('DD MMM'),
+          },
+          {
+            y: recovered_cases[1],
+            label: Moment(list[1].Date).format('DD MMM'),
+          },
+          {
+            y: recovered_cases[0],
+            label: Moment(list[0].Date).format('DD MMM'),
+          },
           //Moment.tz(Date, "Europe/Istanbul").format("DD MMM") can be used for timezone with moment-timezone
         ],
       },
