@@ -10,14 +10,15 @@ const Corona = () => {
   return (
     <Consumer>
       {(value) => {
-        const { corona_list, today, day_counter, daily_cases } = value;
+        const { corona_list, today, day_counter, daily_cases, daily_recovered_cases } = value;
         const reverse_corona_list = corona_list.slice(0).reverse();
         const reverse_daily_cases = daily_cases.slice(0).reverse();
+        const reverse_recovered_cases = daily_recovered_cases.slice(0).reverse();
         var reverse_deaths = [];
         reverse_corona_list.every(
           (item, index) => (reverse_deaths[index] = item.Deaths)
         );
-
+        console.log(daily_recovered_cases);
         return (
           <div className="container">
             <p className="text-muted text-center px-5">
@@ -36,6 +37,7 @@ const Corona = () => {
                 list={reverse_corona_list}
                 daily_cases={reverse_daily_cases}
                 deaths={reverse_deaths}
+                recovered_cases={reverse_recovered_cases}
               />
             </div>
             <div className="text-center today">
