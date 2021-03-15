@@ -49,3 +49,4 @@ for building the project into static, deployable files.
 - [x] Improve loading page by [yigiterdev](https://github.com/yigiterdev)
 - [x] Remove duplicate card by [duzgundev](https://github.com/duzgundev)
 - [x] Add other countries and redirects by [OmBayus](https://github.com/OmBayus)
+- [x] Add Daily Recovered to chart on homepage by [Hanupratap Singh Chauhan](https://github.com/hanupratap)
