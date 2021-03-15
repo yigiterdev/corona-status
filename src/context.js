@@ -12,9 +12,11 @@ export class Provider extends Component {
     total_cases: '',
     vacine_list: [],
     vacine_day: [],
+    daily_recovered_cases: []
   };
   async getCases() {
     const dailyCases = [];
+    const dailyrecovered = [];
     await axios
       .get('https://api.covid19api.com/total/dayone/country/turkey')
       .then((res) => {
@@ -23,14 +25,17 @@ export class Provider extends Component {
           today: res.data[res.data.length - 1],
           day_counter: res.data.length,
         });
+        dailyrecovered.push(res.data[0].Recovered);
         dailyCases.push(res.data[0].Confirmed);
         for (let i = 1; i < res.data.length; i++) {
           dailyCases.push(res.data[i].Confirmed - res.data[i - 1].Confirmed);
+          dailyrecovered.push(res.data[i].Recovered - res.data[i - 1].Recovered);
         }
         this.setState({
           daily_cases: dailyCases,
+          daily_recovered_cases : dailyrecovered,
+          isLoading: false
         });
-        this.setState({ isLoading: false });
       })
       .catch((err) => console.log(err));
   }
@@ -65,4 +70,5 @@ export class Provider extends Component {
     );
   }
 }
+
 export const Consumer = Context.Consumer;
