@@ -5,41 +5,25 @@ const Footer = () => {
     <footer className="footer">
       <div className="row d-flex justify-content-center align-items-center text-center">
         <div className="col-md-3 my-2">
-          <p className="footer-text copyright mt-2">
+          <p className="mt-2 copyright">
+            <strong>Corona Status © 2021 </strong>
+          </p>
+        </div>
+        <div className="col-md-3 my-2">
+          <p className="mt-2">
             <strong>
-              This App made with React 💛
-              <a href="https://yigiter.dev/" className="personal-page-link">
-                by yigiterdev
-              </a>
+              This Page created with <i class="fab fa-react"></i> and{' '}
+              <i class="fab fa-bootstrap"></i>
             </strong>
           </p>
         </div>
         <div className="col-md-3 my-2">
-          <a href="https://github.com/yigiterdev/corona-status">
-            <i className="fab fa-github mx-2"></i> Source Code
-          </a>
-        </div>
-        <div className="col-md-3 my-2">
-          <a
-            href="https://www.linkedin.com/in/yigiterbugra/"
-            className="rounded-circle p-4 text-center"
-          >
-            <i className="fab fa-linkedin"></i>
-          </a>
-
-          <a
-            href="https://twitter.com/yigiterdev"
-            className="rounded-circle p-4 text-center"
-          >
-            <i className="fab fa-twitter"></i>
-          </a>
-
-          <a
-            href="https://github.com/yigiterdev"
-            className="rounded-circle p-4 text-center"
-          >
-            <i className="fab fa-github"></i>
-          </a>
+          <p className="mt-2">
+            <a href="https://github.com/yigiterdev/corona-status">
+              <i className="fab fa-github mx-2"></i>{' '}
+              <strong>Source Code</strong>
+            </a>
+          </p>
         </div>
       </div>
     </footer>

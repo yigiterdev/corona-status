@@ -5,6 +5,10 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 1.2rem;
 }
+::selection{
+  background-color: black;
+  color: white;
+}
 
 .corona-card {
   margin: 40px;
@@ -142,3 +146,32 @@ div.arrow:hover::after {
 div.arrow:hover::before {
   border-color: orange;
 }
+
+.country-picker{
+  width: 120px;
+  outline: none;
+  background-color: black;
+  border: 1px solid #343a40;
+  border-radius: .2rem;
+  color: white;
+  padding: .44rem .50rem;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+
+.spinner-btn{
+  display: block;
+  margin: 0 auto;
+  border: 1px solid black;
+  padding: 5px 20px;
+  cursor: pointer;
+  font-weight: 900;
+  transition: all .2s;
+}
+
+.spinner-btn:hover{
+  background-color: black;
+  color: white;
+}
+
