@@ -18,7 +18,7 @@ const CoronaChart = ({ list, daily_cases, deaths, recovered_cases }) => {
     data: [
       {
         type: 'spline',
-        name: 'Günlük İyileşen',
+        name: 'Günlük Vaka',
         showInLegend: true,
         dataPoints: [
           { y: daily_cases[10], label: Moment(list[10].Date).format('DD MMM') },
@@ -37,7 +37,7 @@ const CoronaChart = ({ list, daily_cases, deaths, recovered_cases }) => {
       },
       {
         type: 'spline',
-        name: 'Günlük Vaka',
+        name: 'Günlük İyileşen',
         showInLegend: true,
         dataPoints: [
           {
