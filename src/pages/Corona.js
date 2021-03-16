@@ -17,6 +17,10 @@ const Corona = () => {
           daily_cases,
           daily_recovered_cases,
         } = value;
+		daily_cases.forEach((element, index) => {
+			if (element < 0)
+				daily_cases[index] = 0;
+		})
         const reverse_corona_list = corona_list.slice(0).reverse();
         const reverse_daily_cases = daily_cases.slice(0).reverse();
         const reverse_recovered_cases = daily_recovered_cases
