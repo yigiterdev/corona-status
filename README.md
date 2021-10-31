@@ -51,3 +51,5 @@ for building the project into static, deployable files.
 - [x] Add other countries and redirects by [OmBayus](https://github.com/OmBayus)
 - [x] Add Daily Recovered to chart on homepage by [Hanupratap Singh Chauhan](https://github.com/hanupratap)
 - [x] Add Daily Recovered to cards on homepage by [yigiterdev](https://github.com/yigiterdev)
+
+Test
